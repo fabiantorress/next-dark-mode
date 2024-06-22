@@ -12,10 +12,8 @@ function RootLayout({ children }) {
   const savedTheme = cookies().get('color-theme');
   const theme = savedTheme?.value || 'light';
 
-  const themeColors = theme === 'light' ? LIGHT_COLORS : DARK_COLORS;
-
   return (
-    <html lang="en" data-color-theme={theme} style={themeColors}>
+    <html lang="en" data-color-theme={theme}>
       <body>
         <header className="site-header">
           <Link href="">Some Website</Link>

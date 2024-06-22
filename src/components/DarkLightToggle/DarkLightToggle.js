@@ -24,18 +24,9 @@ function DarkLightToggle({ initialTheme }) {
 
     // 3 — Update the DOM to present the new colors
     const root = document.documentElement;
-    const colors = nextTheme === 'light' ? LIGHT_COLORS : DARK_COLORS;
-
     // 3.1 — Edit the data-attribute, so that we can apply CSS
     // conditionally based on the theme.
     root.setAttribute('data-color-theme', nextTheme);
-
-    // 3.2 — Swap out the actual colors on the <html> tag.
-    //       We do this by iterating over each CSS variable
-    //       and setting it as a new inline style.
-    Object.entries(colors).forEach(([key, value]) => {
-      root.style.setProperty(key, value);
-    });
   }
 
   return (
